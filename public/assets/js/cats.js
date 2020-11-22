@@ -5,7 +5,7 @@ $(function() {
     var newSleep = $(this).data("newsleep");
 
     var newSleepState = {
-      sleepy: newSleep
+      eaten: newSleep
     };
 
     // Send the PUT request.
@@ -25,15 +25,15 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newCat = {
+    var newBurger = {
       name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim()
+      eaten: $("[name=eaten]:checked").val().trim()
     };
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newCat
+      data: newBurger
     }).then(
       function() {
         console.log("created new cat");
